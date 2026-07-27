@@ -42,6 +42,15 @@ async function listScenarios(filters = {}) {
   let scenarios = [...db.scenarios];
   if (filters.difficulty) scenarios = scenarios.filter((item) => item.difficulty === filters.difficulty);
   if (filters.concept) scenarios = scenarios.filter((item) => item.concepts.includes(filters.concept));
+  if (filters.theme) {
+    if (filters.theme === 'default') {
+      const defaultThemes = ['default', 'classic', 'chai-stall', 'isro', 'instagram', 'food-delivery', 'ai-playlist', 'kota'];
+      scenarios = scenarios.filter((item) => defaultThemes.includes(item.theme) || !item.theme);
+    } else {
+      scenarios = scenarios.filter((item) => item.theme === filters.theme);
+    }
+  }
+  if (filters.caseStudyId) scenarios = scenarios.filter((item) => item.caseStudyId === filters.caseStudyId);
   if (filters.q) {
     const query = filters.q.toLowerCase();
     scenarios = scenarios.filter((item) => (

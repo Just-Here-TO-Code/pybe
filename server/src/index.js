@@ -5,6 +5,7 @@ const scenarioRoutes = require('./routes/scenarios');
 const sessionRoutes = require('./routes/sessions');
 const analyticsRoutes = require('./routes/analytics');
 const roadmapRoutes = require('./routes/roadmap');
+const caseStudiesRoutes = require('./routes/casestudies');
 require('dotenv').config();
 
 const app = express();
@@ -14,15 +15,16 @@ app.use(cors({ origin: process.env.CLIENT_ORIGIN || 'http://localhost:5173' }));
 app.use(express.json());
 app.use(morgan('dev'));
 
-app.get('/api/health', (_req, res) => res.json({ ok: true, product: 'PyBe' }));
+app.get('/api/health', (_req, res) => res.json({ ok: true, product: 'PyBe', version: '2.0.0' }));
 app.use('/api/scenarios', scenarioRoutes);
 app.use('/api/sessions', sessionRoutes);
 app.use('/api/analytics', analyticsRoutes);
 app.use('/api/roadmap', roadmapRoutes);
+app.use('/api/casestudies', caseStudiesRoutes);
 
 app.use((error, _req, res, _next) => {
   console.error(error);
   res.status(error.status || 500).json({ message: error.message || 'Server error' });
 });
 
-app.listen(port, () => console.log(`PyBe API running on http://localhost:${port}`));
+app.listen(port, () => console.log(`PyBe API v2.0 running on http://localhost:${port}`));

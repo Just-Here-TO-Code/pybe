@@ -12,12 +12,24 @@ The project is designed to demonstrate a proof-of-concept for a Python learning 
 - Provides a roadmap of learning goals from V0 through V3
 
 ## Main Features
-- Scenario browser with difficulty, concept, and search filters
-- Interactive learning sessions with conversational prompts
-- Reasoning support, abstraction mapping, prompt scoring, and reflection capture
-- Dashboard with progress, prompt maturity, concept mastery, and misconceptions
-- Roadmap visualization for staged product development
-- Local JSON file storage with seedable sample data
+
+### 🧠 First-Principles Learning Engine
+- **First-Principles Friction Simulator**: Side-by-side Before vs After code comparison in every chapter revealing the pain point behind each Python construct.
+- **Interactive Mental Model Lab**: Live visualizer embedded in the Theory phase showing RAM memory slots (`0x7F8`), arithmetic pipelines, zero-indexed string cells, decision trees, loop steppers, hash tables, error shields, and sort steppers.
+- **Instant Micro-Sandbox / Interactive Try-It Widget**: Embedded live browser-based Python executor with dark terminal stdout (`$ python main.py`), code resetting, and live syntax validation.
+- **Socratic Misconception Spotter**: Automated analysis of student reasoning detecting 5 common beginner mental traps (0-indexing, `=` vs `==`, immutability, list desync, unhandled edge cases) with targeted Socratic prompts.
+
+### 🎨 Theme Systems & Content
+- **Dynamic Dashboard Themes**: Interactive theme selector on dashboard (Default 🐍, Potterheads 🧙‍♂️, Marvel 🦾, Anime ⚔️).
+- **Tailored Light & Dark Modes**: Bespoke color palettes for both Dark and Light modes across all themes (Hogwarts Parchment, Stark Titanium, Cyber Tokyo Lavender).
+- **Theme-Switched Case Studies & Scenarios**: Dynamic filtering of case study arcs and 93 total scenarios matching the active theme across all 13 curriculum chapters.
+- **Scenario Browser**: Filter scenarios by difficulty, concept, theme, and keyword search.
+
+### 📚 Learning Flow & Architecture
+- **Sequential Chapter Learning**: 13 chapters across 4 curriculum sections (Getting Started, Basics, Intermediate, Advanced).
+- **Interactive 4-Phase Learning Flow**: Intro → Questions → Reasoning Summary → Theory Reveal.
+- **Educational Scoring System**: Reasoning quality evaluator with level labels (🔥 Excellent / ⚡ Strong / 💡 Good / 📈 Getting there / 🌱 Beginning).
+- **Local JSON File Storage**: Seedable sample data (`server/src/data/db.json`) for 93 scenarios across all theme worlds.
 
 ## Technology Stack
 - Frontend: React + Vite

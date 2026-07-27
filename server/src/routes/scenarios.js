@@ -5,8 +5,8 @@ const router = express.Router();
 
 router.get('/', async (req, res, next) => {
   try {
-    const { q, concept, difficulty } = req.query;
-    const scenarios = await store.listScenarios({ q, concept, difficulty });
+    const { q, concept, difficulty, theme, caseStudyId } = req.query;
+    const scenarios = await store.listScenarios({ q, concept, difficulty, theme, caseStudyId });
     res.json(scenarios);
   } catch (error) {
     next(error);
